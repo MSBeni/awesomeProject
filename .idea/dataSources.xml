@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="dino" uuid="9dea54de-e001-4dec-a5bc-17ba9411584f">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/dino/learnsqlite/dino.db</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="dino [2]" uuid="f5fa3b22-bb91-4ce9-8f56-58b197373830">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/dino/learnorm/dino.db</jdbc-url>
+    </data-source>
+  </component>
+</project>

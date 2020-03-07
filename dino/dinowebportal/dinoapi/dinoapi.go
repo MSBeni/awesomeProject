@@ -1,0 +1,27 @@
+package dinoapi
+
+import(
+	"awesomeProject/dino/databaselayer"
+	"github.com/gorilla/mux"
+	"net/http"
+)
+
+//dino API =>
+// HTTP GET for search /api/dinos/nickname/rex , or search for /api/dinos/type/velociraptor
+// HTTP POST to add or edit /api/dinos/add or /api/dinos/edit
+// HTTP POST to /api/dinos/edit/rex, rex will be edited using the data obtained from the http json body of the request
+// The HTTP POST request comes with a json body which hosts the data to be added or used to the edit
+
+func RunApi(endpoint string, db databaselayer.DinoDBHandler) error {
+	//endpoint example: localhost:8080
+	r := mux.NewRouter() //mux.Router matches incoming requests against a list of registered routes and calls a handler for the route that matches the URL or other conditions.
+	RunAPIOnRouter(r, db)
+	return http.ListenAndServe(endpoint, r)
+}
+
+func RunAPIOnRouter(r *mux.Router, db databaselayer.DinoDBHandler){handler.editsHandler
+	handler := newDinoRESTAPIHandler(db)
+	apirouter := r.PathPrefix("/api/dinos").Subrouter()
+	apirouter.Methods("GET").Path("/{SearchCriteria}/{search}").HandlerFunc(handler.searchHandler)
+	apirouter.Methods("POST").PathPrefix("/{Operation}").HandlerFunc(handler.editsHandler)
+}
