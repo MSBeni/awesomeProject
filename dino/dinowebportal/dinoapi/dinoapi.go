@@ -1,6 +1,6 @@
 package dinoapi
 
-import(
+import (
 	"awesomeProject/dino/databaselayer"
 	"github.com/gorilla/mux"
 	"net/http"
@@ -19,7 +19,7 @@ func RunApi(endpoint string, db databaselayer.DinoDBHandler) error {
 	return http.ListenAndServe(endpoint, r)
 }
 
-func RunAPIOnRouter(r *mux.Router, db databaselayer.DinoDBHandler){handler.editsHandler
+func RunAPIOnRouter(r *mux.Router, db databaselayer.DinoDBHandler) {
 	handler := newDinoRESTAPIHandler(db)
 	apirouter := r.PathPrefix("/api/dinos").Subrouter()
 	apirouter.Methods("GET").Path("/{SearchCriteria}/{search}").HandlerFunc(handler.searchHandler)
